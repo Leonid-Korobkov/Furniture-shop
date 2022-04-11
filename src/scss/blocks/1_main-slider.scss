@@ -1,0 +1,186 @@
+.page {
+    flex: 1 1 auto;
+    &__main-slider {
+    }
+}
+.main-slider {
+    background: #fcf8f3;
+    &__container {
+        position: relative;
+        @media (min-width: $tablet) {
+            &::before {
+                content: "";
+                background: #f9f1e7;
+                position: absolute;
+                top: 0;
+                width: 100vw;
+                right: 376px;
+                height: 100%;
+            }
+        }
+    }
+
+    &__body {
+        padding: 140px 0px 0px 0px;
+        position: relative;
+        z-index: 2;
+        @media (max-width: $tablet) {
+            padding: 80px 0px 0px 0px;
+        }
+        @media (max-width: $mobile) {
+            padding: 50px 0px 0px 0px;
+        }
+        @media (min-width: $tablet) {
+            display: flex;
+        }
+    }
+
+    &__content {
+        flex: 0 0 494/1240 * 100%;
+        align-self: flex-start;
+        @include adaptiveValue("margin-bottom", 80, 15);
+    }
+
+    &__slider {
+        flex: 1 1 auto;
+        min-width: 0;
+        align-self: flex-end;
+    }
+}
+
+.content-main {
+    position: relative;
+    z-index: 5;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include adaptiveValue("padding-top", 60, 1);
+    @include adaptiveValue("padding-bottom", 60, 1);
+
+    @media (min-width: $tablet) {
+        @include adaptiveValue("padding", 60, 1);
+        background: rgba(255, 255, 255, 0.85);
+        @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(31px);
+        }
+    }
+    &__title {
+        @include adaptiveValue("font-size", 56, 24);
+        font-weight: 700;
+        line-height: 120%;
+        &:not(:last-child) {
+            margin: 0px 0px 16px / 56px * 1em 0px;
+        }
+    }
+
+    &__text {
+        @include adaptiveValue("font-size", 20, 16);
+        color: $grayColor;
+        font-weight: 500;
+        line-height: 150%;
+        &:not(:last-child) {
+            margin: 0px 0px 48px / 20px * 1em 0px;
+        }
+    }
+
+    &__button {
+        font-weight: 600;
+        @include adaptiveValue("min-height", 78, 45);
+        @include adaptiveValue("font-size", 20, 16);
+        background: $orangeColor;
+        color: #fff;
+        width: 100%;
+        &:hover {
+            background: #ff934f;
+        }
+    }
+}
+.swiper {
+    overflow: visible;
+}
+.slider-main { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &__controls {
+        align-self: stretch;
+        margin: 0px 0px 20px 0px;
+    }
+
+    &__body {
+        
+    }
+
+    &__slide {
+        position: relative;
+    }
+
+    &__image {
+        // padding: 0px 0px 56% 0px;
+    }
+
+    &__content {
+        min-width: 295px;
+        max-height: 300px;
+        position: absolute;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.85);
+        @include adaptiveValue("padding", 24, 15);
+        @media (min-width: $mobile) {
+            position: absolute;
+            min-width: 350px;
+            @include adaptiveValue("bottom", 40, 0);
+            @include adaptiveValue("right", 40, 0);
+        }
+        @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(31px);
+        }
+    }
+
+    &__title {
+        @include adaptiveValue("font-size", 28, 22);
+        line-height: 120%;
+        font-weight: 600;
+        margin: 0px 0px 4px/28px * 1em 0px;
+    }
+
+    &__text {
+        line-height: 150%;
+        color: $grayColor;
+        &:not(:last-child) {
+            margin: 0px 0px 8px/16px * 1em 0px;
+        }
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: row-reverse;
+        line-height: 150%;
+        align-items: center;
+        font-weight: 600;
+        justify-content: space-between;
+        @include adaptiveValue("font-size", 20, 16);
+        &::before{
+            margin: 0px 0px 0px 10px;
+            font-size: 14px;
+        }
+    }
+}
+.controls-slider-main {
+    @media (min-width: $tablet) {
+        padding: 0px 0px 0px 32px;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__dots {
+    }
+
+    &__arrows {
+    }
+}

@@ -1,0 +1,183 @@
+.footer {
+
+    &__container {
+    }
+
+    &__body {
+        display: grid;
+        border-top: 1px solid #D8D8D8;
+        grid-template-columns: 250px 1fr 290px;
+        @include adaptiveValue("padding-top", 80, 30);
+        @include adaptiveValue("padding-bottom", 60, 30);
+        @include adaptiveValue("column-gap", 80, 0);
+
+        @media (max-width:$pc){
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr 290px;
+        }
+        @media (max-width:$tablet){
+            display: block;
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @media (max-width:$pc){
+            grid-column: span 2;
+            @include adaptiveValue("margin-bottom", 40, 30);
+        }
+    }
+
+    &__logo {
+        margin: 0px 0px 16px / 24px * 1em 0px;
+    }
+
+    &__text {
+        color: $grayColor;
+        line-height: 150%;
+        &:not(:last-child) {
+            margin: 0px 0px 1em 0px;
+        }
+    }
+
+    &__contacts {
+    }
+
+    &__menu {
+        @media (max-width:$tablet){
+            @include adaptiveValue("margin-bottom", 40, 30);
+        }
+    }
+
+    &__subscribe {
+    }
+}
+._footer-title {
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: 29 / 24 * 100%;
+    color: #000;
+    font-weight: 700;
+}
+.contacts-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &__item {
+        display: inline-flex;
+        align-items: center;
+        color: $grayColor;
+        line-height: 150%;
+        transition: color 0.3s ease 0s;
+        &::before{ 
+            margin: 0px 8px 0px 0px;
+        }
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 16, 20);
+        }
+        @media (any-hover: hover){
+            &:hover {
+                color: $orangeColor
+            }
+        }
+    }
+}
+.menu-footer {
+    @media (min-width:$mobile){
+        display: flex;
+    }
+    &__column {
+        @media (min-width:$mobile){
+            flex: 0 1 33.333%;
+        }
+        @media (max-width:$mobile){
+            @include adaptiveValue("margin-bottom", 30, 15);
+        }
+    }
+    &__title {
+        cursor: default;
+        @media (min-width:$mobile){
+            margin: 0px 0px 16px / 24px * 1em 0px;
+        }
+        ._spoller-init & {
+            display: flex;
+            width: 100%;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            @extend ._icon-arrow-down;
+            &::before {
+                @extend %ic;
+                font-size: 14px;
+                transition: transform 0.3s ease 0s;
+            }
+        }
+        &._spoller-active {
+            &::before {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+    &__list {
+        li {
+            &:not(:last-child) {
+                margin: 0px 0px 15px 0px;
+            }
+        }
+        @media (max-width:$mobile){
+            padding-top: 15px;
+        }
+    }
+
+    &__link {
+        color: $darkGrayColor;
+        transition: color 0.3s ease 0s;
+        line-height: 120%;
+        font-weight: 500;
+        @media (any-hover: hover){
+            &:hover {
+                color: $orangeColor;
+            }
+        }
+    }
+}
+.menu-footer-title {
+}
+.subscribe {
+
+    &__title {
+        margin: 0px 0px 16px / 24px * 1em 0px;
+    }
+
+    &__form {
+        display: flex;
+        position: relative;
+    }
+
+    &__button {
+        flex: 0 0 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        background: $orangeColor;
+        color: #fff;
+        margin: 0px 0px 0px 4px;
+        transition: background 0.3s ease 0s;
+        @media (any-hover: hover){
+            &:hover {
+                background: #f4955b;
+            }
+        }
+    }
+    &__input {
+        width: 100%;
+        padding: 0px 12px;
+        background: #F4F5F7;
+        color: $grayColor;
+        &:focus {
+            outline: auto;
+        }
+    }
+}
